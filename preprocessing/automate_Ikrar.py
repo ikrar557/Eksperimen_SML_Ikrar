@@ -9,7 +9,7 @@ def preprocess_data(file_path):
     df['Age'].fillna(df['Age'].median(), inplace=True)
     df['Embarked'].fillna(df['Embarked'].mode()[0], inplace=True)
 
-    df.drop(columns=['PassengerId', 'Name', 'Ticket'], inplace=True)
+    df.drop(columns=['PassengerId', 'Name', 'Ticket', 'Cabin'], inplace=True)
 
     Q1 = df['Fare'].quantile(0.25)
     Q3 = df['Fare'].quantile(0.75)
