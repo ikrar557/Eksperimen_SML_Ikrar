@@ -1,0 +1,30 @@
+name: Preprocessing Titanic Data
+
+on:
+  push:
+    paths:
+      - preprocessing/**
+      - titanic_raw.csv
+      - .github/workflows/preprocessing.yml
+  workflow_dispatch:
+
+jobs:
+  preprocess:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: 3.12
+
+    - name: Install Dependencies
+      run: |
+        pip install pandas scikit-learn
+
+    - name: Run Preprocessing Script
+      run: |
+        python preprocessing/automate_Ikrar.py
