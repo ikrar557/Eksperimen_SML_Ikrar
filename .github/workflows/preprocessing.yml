@@ -1,4 +1,4 @@
-name: Preprocessing Titanic Data
+name: Preprocess Titanic Data
 
 on:
   push:
@@ -19,7 +19,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: 3.12
+        python-version: 3.10
 
     - name: Install Dependencies
       run: |
@@ -28,3 +28,13 @@ jobs:
     - name: Run Preprocessing Script
       run: |
         python preprocessing/automate_Ikrar.py
+
+    - name: Commit and Push Preprocessed Data
+      run: |
+        git config --global user.name "${{ secrets.USERNAME }}"
+        git config --global user.email "${{ secrets.EMAIL }}"
+        git add preprocessing/titanic_preprocessing.csv
+        git commit -m "Add preprocessed Titanic data"
+        git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
