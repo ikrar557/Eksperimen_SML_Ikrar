@@ -1,0 +1,6 @@
+.history
+mlruns
+mlartifacts
+modelling/confusion_matrix.json
+modelling/estimator.html
+modelling/training_confusion_matrix.png
