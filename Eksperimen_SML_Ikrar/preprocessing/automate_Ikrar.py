@@ -30,7 +30,7 @@ def preprocess_data(file_path):
     output_path = "preprocessing/titanic_preprocessing.csv"
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
     df.to_csv(output_path, index=False)
-    ## test trigger 2
+    ## test trigger 3
     print(f"Data preprocessed and saved to: {output_path}")
     return df
 

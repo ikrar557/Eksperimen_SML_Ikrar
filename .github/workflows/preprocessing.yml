@@ -39,7 +39,7 @@ jobs:
         cd Eksperimen_SML_Ikrar
         git add preprocessing/titanic_preprocessing.csv
         git commit -m "Add preprocessed Titanic data"
-        git push
+        git push --force origin main
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
