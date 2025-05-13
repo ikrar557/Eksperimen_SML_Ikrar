@@ -4,6 +4,8 @@ on:
   push:
     paths:
       - 'MLProject/**'
+    branches:
+      - main
   pull_request:
     paths:
       - 'MLProject/**'
@@ -51,7 +53,7 @@ jobs:
             with:
               name: ml-model-artifact
               path: mlruns/0/${{ env.RUN_ID }}/artifacts/mode
-              
+
           - name: Build Docker Model
             run: |
               mlflow models build-docker --model-uri "runs:/$RUN_ID/model" --name "cc"
