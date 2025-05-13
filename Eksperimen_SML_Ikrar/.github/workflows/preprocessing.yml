@@ -1,12 +1,9 @@
-name: Preprocess Titanic Data
+name: Eksperimen SML Ikrar
 
 on:
   push:
     paths:
-      - preprocessing/**
-      - titanic_raw.csv
-      - .github/workflows/preprocessing.yml
-  workflow_dispatch:
+      - 'Eksperimen_SML_Ikrar/**' 
 
 jobs:
   preprocess:

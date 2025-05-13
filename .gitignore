@@ -1,6 +1,6 @@
 .history
 mlruns
 mlartifacts
-modelling/confusion_matrix.json
-modelling/estimator.html
-modelling/training_confusion_matrix.png
+Membangun_model/confusion_matrix.json
+Membangun_model/estimator.html
+Membangun_model/training_confusion_matrix.png
