@@ -27,13 +27,13 @@ jobs:
               python-version: "3.12.7"
 
           - name: Check Env
-              run: |
-                  echo $CSV_URL
+            run: |
+              echo $CSV_URL
 
           - name: Install Dependencies
-              run: |
-                python -m pip install --upgrade pip
-                pip install mlflow
+            run: |
+              python -m pip install --upgrade pip
+              pip install mlflow
           - name: Run MLFlow Project
             run: |
                 mlflow run MLProject --env=manager-local
