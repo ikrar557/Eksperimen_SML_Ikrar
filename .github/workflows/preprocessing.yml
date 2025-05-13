@@ -43,7 +43,4 @@ jobs:
         fi
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        git push --force origin main 
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
