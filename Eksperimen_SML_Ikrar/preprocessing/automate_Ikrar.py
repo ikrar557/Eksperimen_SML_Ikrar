@@ -35,4 +35,4 @@ def preprocess_data(file_path):
     return df
 
 if __name__ == "__main__":
-    preprocess_data("titanic_raw.csv")
+    preprocess_data("Eksperimen_SML_Ikrar/titanic_raw.csv")
