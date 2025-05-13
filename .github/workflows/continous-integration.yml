@@ -3,19 +3,19 @@ name: CI/CD Flow
 on:
   push:
     paths:
-      - 'MLProject/**'
+      - 'MLProject/**/*'
     branches:
       - main
   pull_request:
     paths:
-      - 'MLProject/**'
+      - 'MLProject/**/*'
 
 env:
   CSV_URL: "titanic_preprocessing.csv"
   TARGET_VAR: "Survived"
 
 jobs:
-  preprocess:
+  continuous-integration:
     runs-on: ubuntu-latest
     steps:
           - name: Run actions/checkout@v3
@@ -23,8 +23,8 @@ jobs:
 
           - name: Set up Python 3.12.7
             uses: actions/setup-python@v4
-              with:
-                python-version: "3.12.7"
+            with:
+              python-version: "3.12.7"
 
           - name: Check Env
               run: |
@@ -65,9 +65,9 @@ jobs:
               password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
 
           - name: Tag Docker Image
-              run: |
-                docker tag msml-dicoding ${{ secrets.DOCKER_HUB_USERNAME }}/msml-dicoding:latest
+            run: |
+              docker tag msml-dicoding ${{ secrets.DOCKER_HUB_USERNAME }}/msml-dicoding:latest
 
           - name: Push Docker Image
-                  run: |
-                  docker push ${{ secrets.DOCKER_HUB_USERNAME }}/msml-dicoding:latest
+            run: |
+              docker push ${{ secrets.DOCKER_HUB_USERNAME }}/msml-dicoding:latest

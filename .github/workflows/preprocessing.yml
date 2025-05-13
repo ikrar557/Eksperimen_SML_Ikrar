@@ -3,7 +3,12 @@ name: Eksperimen SML Ikrar
 on:
   push:
     paths:
-      - 'Eksperimen_SML_Ikrar/**' 
+      - 'Eksperimen_SML_Ikrar/**/*'
+    branches:
+      - main
+  pull_request:
+    paths:
+      - 'Eksperimen_SML_Ikrar/**/*'
 
 jobs:
   preprocess:
@@ -24,6 +29,7 @@ jobs:
 
     - name: Run Preprocessing Script
       run: |
+        cd Eksperimen_SML_Ikrar
         python preprocessing/automate_Ikrar.py
 
     - name: Commit and Push Preprocessed Data
