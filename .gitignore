@@ -4,3 +4,5 @@ mlartifacts
 Membangun_model/confusion_matrix.json
 Membangun_model/estimator.html
 Membangun_model/training_confusion_matrix.png
+Monitor dan Logging/titanic_preprocessing.csv
+Monitor dan Logging/docker-compose.yml
