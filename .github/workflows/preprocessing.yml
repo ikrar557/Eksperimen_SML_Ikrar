@@ -2,9 +2,13 @@ name: Eksperimen SML Ikrar
 
 on:
   push:
+    paths:
+      - 'preprocessing/**'
     branches:
       - main
   pull_request:
+    paths:
+      - 'preprocessing/**'
     branches:
       - main
 
